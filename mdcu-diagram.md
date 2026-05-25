@@ -73,8 +73,6 @@ Edward Wilson]
 Rooster Cogburn]
         MMEN[The Monuments Men
 Frank Stokes]
-        CHAMY[Chasing Amy
-Holden McNeil]
         SUY[Stuck on You
 Bob Tenor]
         TLD[The Last Duel
@@ -107,7 +105,6 @@ Plan Editors]
     INT -.wrote while stranded/.-> GSHEP
     INT -.wrote while stranded/.-> TGRIT
     INT -.wrote while stranded/.-> MMEN
-    INT -.wrote while stranded/.-> CHAMY
     INT -.wrote while stranded/.-> SUY
     INT -.wrote while stranded/.-> TLD
     INT -.wrote while stranded/.-> THOR
@@ -129,5 +126,5 @@ Plan Editors]
     classDef authored fill:#1e1535,stroke:#7c3aed,stroke-width:1px,color:#c4b5fd;
     class CUF,RAIN,GWH,ROUND,GZ,B1,B2,B3,JB,DEP,CUT,INF,SYR,TAB,CON,MAR,INT,ELY core;
     class AB,BULK meta;
-    class TGW,SPR,RIP,DOG,GSHEP,TGRIT,MMEN,CHAMY,SUY,TLD,THOR authored;
+    class TGW,SPR,RIP,DOG,GSHEP,TGRIT,MMEN,SUY,TLD,THOR authored;
 ```

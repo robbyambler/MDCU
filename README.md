@@ -29,12 +29,12 @@ This repo collects a tongue-in-cheek but internally consistent "Matt Damon Cinem
 | 14b | Promised Land | Steve Butler | Corporate operative who turns |
 | 15 | Contagion | Mitch Emhoff | |
 | 16 | The Martian | Mark Watney | |
-| 17 | Interstellar | Dr. Mann | Writes 13 stories during isolation |
+| 17 | Interstellar | Dr. Mann | Writes 12 stories during isolation |
 | 18 | Elysium | Max Da Costa | Loop closes |
 
 ## Authored works (Dr. Mann's catalog)
 
-Stories written during isolation on the ice planet. Not simulations — fiction. The one constant across all thirteen: when he writes *Dogma*, he writes his old friend (Chuckie) as Bartleby alongside his Loki.
+Stories written during isolation on the ice planet. Not simulations — fiction. The one constant across all twelve: when he writes *Dogma*, he writes his old friend (Chuckie) as Bartleby alongside his Loki.
 
 - *Saving Private Ryan* — fantasy of being worth rescuing
 - *All the Pretty Horses* — Western honor code without institutional support
@@ -44,7 +44,6 @@ Stories written during isolation on the ice planet. Not simulations — fiction.
 - *The Good Shepherd* — writes himself as the founding architect of the CIA, from the ice planet where the CIA's creation erased him
 - *True Grit* — a past-his-prime marshal who still gets the job done; a permission slip for the later chapters
 - *The Monuments Men* — preserving civilization's record while everything burns; written deep into the isolation
-- *Chasing Amy* — love story where the obstacle is entirely internal; written early, before the grandiosity
 - *Suburbicon* — man in a perfect house committing terrible acts
 - *The Last Duel* — knight demanding institutional justice from a corrupt system
 - *Thor: Love and Thunder* — Asgardian actor in a Loki stage drama; story within a story within a story
@@ -101,6 +100,6 @@ All film titles, characters, and related intellectual property referenced in thi
 - *The Good Shepherd* © 2006 Universal Pictures / Morgan Creek Entertainment
 - *True Grit* © 2010 Paramount Pictures / Skydance Productions
 - *The Monuments Men* © 2014 Columbia Pictures / Studio Babelsberg
-- *Chasing Amy* © 1997 Miramax Films / View Askew Productions
+
 
 No copyright infringement is intended. No claim is made to any of the characters, stories, or intellectual property belonging to the rights holders listed above. All original creative commentary, connective narrative, and universe framing in this project are the work of the author and are offered freely for fan and educational use.

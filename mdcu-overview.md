@@ -140,7 +140,7 @@ He writes heroic stories, mythic ones, absurdist ones. A soldier worth rescuing.
 
 Then the Endurance arrives. He falsifies his findings. He tries to take the ship. He fails. He dies in the airlock explosion. The bulk beings preserve a thread.
 
-**Dr. Mann's authored works:** *Saving Private Ryan*, *All the Pretty Horses*, *The Talented Mr. Ripley*, *The Great Wall*, *Dogma*, *The Good Shepherd*, *True Grit*, *The Monuments Men*, *Chasing Amy*, *Suburbicon*, *The Last Duel*, the Asgardian actor in *Thor: Love and Thunder*, *Stuck on You*.
+**Dr. Mann's authored works:** *Saving Private Ryan*, *All the Pretty Horses*, *The Talented Mr. Ripley*, *The Great Wall*, *Dogma*, *The Good Shepherd*, *True Grit*, *The Monuments Men*, *Suburbicon*, *The Last Duel*, the Asgardian actor in *Thor: Love and Thunder*, *Stuck on You*.
 
 ---
 
