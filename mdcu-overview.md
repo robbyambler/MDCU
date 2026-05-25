@@ -94,11 +94,27 @@ Geneva-based energy analyst and adviser to a reform-minded Gulf prince. His son 
 
 ---
 
+### 10b. Going to ground — *Stillwater* (Bill Baker)
+
+Marseille. He surfaces as Bill Baker, an Oklahoma roughneck — maximum distance from his Geneva energy analyst identity. No suits, no offices, no European political circles. He navigates the French legal bureaucracy and its adjacent criminal infrastructure to locate and try to free a jailed daughter. The cover is low, the work is slow, and the emotional stakes are personal rather than institutional. He has not operated from personal stakes since Rudy Baylor. Something shakes loose.
+
+*From here:* Surfaces stateside with a clearer sense of what he actually values, before personal loyalty becomes something he has to choose overtly.
+
+---
+
 ### 11. First encounter with the Plan — *The Adjustment Bureau* (David Norris)
 
 Rising New York politician. He finally sees the infrastructure that has been shaping his life: the Adjustment Bureau, mid-level plan editors enforcing a hidden architecture for human history. He refuses the plan. He keeps the love. Both stick.
 
 *From here:* Genuine personal loyalty anchors him before the world demands his attention at a different scale.
+
+---
+
+### 11b. Corporate operative who turns — *Promised Land* (Steve Butler)
+
+Cover as Steve Butler, a natural gas company landman working rural Pennsylvania and Ohio — buying up fracking rights from farmers, one handshake at a time. The work is pure charm operation: patient, intimate, built on making people trust you faster than they should. He is very good at it. Forty years of cover identities have made him exceptionally good at it. Midway through the operation, something shifts. He was supposed to be the corporate instrument. He turns against it instead. He blows the cover from inside and walks. The Whitacre pattern — but more deliberate this time. Less mania. More choice.
+
+*From here:* The operation collapses on him. A pandemic is coming.
 
 ---
 
@@ -124,7 +140,7 @@ He writes heroic stories, mythic ones, absurdist ones. A soldier worth rescuing.
 
 Then the Endurance arrives. He falsifies his findings. He tries to take the ship. He fails. He dies in the airlock explosion. The bulk beings preserve a thread.
 
-**Dr. Mann's authored works:** *Saving Private Ryan*, *All the Pretty Horses*, *The Talented Mr. Ripley*, *The Great Wall*, *Dogma*, *Suburbicon*, *The Last Duel*, the Asgardian actor in *Thor: Love and Thunder*, *Stuck on You*.
+**Dr. Mann's authored works:** *Saving Private Ryan*, *All the Pretty Horses*, *The Talented Mr. Ripley*, *The Great Wall*, *Dogma*, *The Good Shepherd*, *True Grit*, *The Monuments Men*, *Chasing Amy*, *Suburbicon*, *The Last Duel*, the Asgardian actor in *Thor: Love and Thunder*, *Stuck on You*.
 
 ---
 

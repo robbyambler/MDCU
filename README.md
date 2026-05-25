@@ -24,21 +24,27 @@ This repo collects a tongue-in-cheek but internally consistent "Matt Damon Cinem
 | 11b | The Cut | [classified] | Chuckie reappears |
 | 12 | The Informant! | Mark Whitacre | |
 | 13 | Syriana | Bryan Woodman | |
+| 13b | Stillwater | Bill Baker | Goes to ground in Marseille |
 | 14 | The Adjustment Bureau | David Norris | |
+| 14b | Promised Land | Steve Butler | Corporate operative who turns |
 | 15 | Contagion | Mitch Emhoff | |
 | 16 | The Martian | Mark Watney | |
-| 17 | Interstellar | Dr. Mann | Writes 9 stories during isolation |
+| 17 | Interstellar | Dr. Mann | Writes 13 stories during isolation |
 | 18 | Elysium | Max Da Costa | Loop closes |
 
 ## Authored works (Dr. Mann's catalog)
 
-Stories written during isolation on the ice planet. Not simulations — fiction. The one constant across all nine: when he writes *Dogma*, he writes his old friend (Chuckie) as Bartleby alongside his Loki.
+Stories written during isolation on the ice planet. Not simulations — fiction. The one constant across all thirteen: when he writes *Dogma*, he writes his old friend (Chuckie) as Bartleby alongside his Loki.
 
 - *Saving Private Ryan* — fantasy of being worth rescuing
 - *All the Pretty Horses* — Western honor code without institutional support
 - *The Talented Mr. Ripley* — man who steals another's identity; written while planning to steal a spacecraft
 - *The Great Wall* — mercenary who chooses loyalty to strangers
 - *Dogma* — two fallen angels (him as Loki, Chuckie as Bartleby) expelled from paradise together
+- *The Good Shepherd* — writes himself as the founding architect of the CIA, from the ice planet where the CIA's creation erased him
+- *True Grit* — a past-his-prime marshal who still gets the job done; a permission slip for the later chapters
+- *The Monuments Men* — preserving civilization's record while everything burns; written deep into the isolation
+- *Chasing Amy* — love story where the obstacle is entirely internal; written early, before the grandiosity
 - *Suburbicon* — man in a perfect house committing terrible acts
 - *The Last Duel* — knight demanding institutional justice from a corrupt system
 - *Thor: Love and Thunder* — Asgardian actor in a Loki stage drama; story within a story within a story
@@ -47,9 +53,7 @@ Stories written during isolation on the ice planet. Not simulations — fiction.
 ## Candidates for future iteration
 
 - *Ocean's Eleven / Twelve / Thirteen* (2001–2007) — transitional con-artist arc between Rounders and The Departed/The Cut
-- *Stillwater* (2021) — blue-collar deep cover; tone fits
 - *Ford v Ferrari* (2019) — engineering under corporate obstruction; cover identity candidate
-- *Promised Land* (2012) — corporate operative who turns
 - *Downsizing* (2017) — near-future bridge between Contagion and The Martian
 
 ## GitHub rendering notes
@@ -94,5 +98,9 @@ All film titles, characters, and related intellectual property referenced in thi
 - *Ford v Ferrari* © 2019 Twentieth Century Fox Film Corporation
 - *Promised Land* © 2012 Focus Features
 - *Downsizing* © 2017 Paramount Pictures
+- *The Good Shepherd* © 2006 Universal Pictures / Morgan Creek Entertainment
+- *True Grit* © 2010 Paramount Pictures / Skydance Productions
+- *The Monuments Men* © 2014 Columbia Pictures / Studio Babelsberg
+- *Chasing Amy* © 1997 Miramax Films / View Askew Productions
 
 No copyright infringement is intended. No claim is made to any of the characters, stories, or intellectual property belonging to the rights holders listed above. All original creative commentary, connective narrative, and universe framing in this project are the work of the author and are offered freely for fan and educational use.

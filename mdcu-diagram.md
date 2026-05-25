@@ -41,8 +41,12 @@ Mark Whitacre]
     subgraph Corporate_&_Political
         SYR[Syriana
 Bryan Woodman]
+        STILL[Stillwater
+Bill Baker]
         TAB[The Adjustment Bureau
 David Norris]
+        PROM[Promised Land
+Steve Butler]
         CON[Contagion
 Mitch Emhoff]
     end
@@ -63,6 +67,14 @@ Pvt. James Ryan]
 Tom Ripley]
         DOG[Dogma
 Loki]
+        GSHEP[The Good Shepherd
+Edward Wilson]
+        TGRIT[True Grit
+Rooster Cogburn]
+        MMEN[The Monuments Men
+Frank Stokes]
+        CHAMY[Chasing Amy
+Holden McNeil]
         SUY[Stuck on You
 Bob Tenor]
         TLD[The Last Duel
@@ -85,13 +97,17 @@ Plan Editors]
 
     %% ====== CORE LIFE PROGRESSION (MOSTLY LINEAR) ======
     CUF --> RAIN --> GWH --> ROUND --> GZ --> B1 --> B2 --> B3 --> JB
-    JB --> DEP --> CUT --> INF --> SYR --> TAB --> CON --> MAR --> INT --> ELY
+    JB --> DEP --> CUT --> INF --> SYR --> STILL --> TAB --> PROM --> CON --> MAR --> INT --> ELY
 
     %% ====== AUTHORED WORKS (WRITTEN DURING INTERSTELLAR ISOLATION) ======
     INT -.wrote while stranded/.-> TGW
     INT -.wrote while stranded/.-> SPR
     INT -.wrote while stranded/.-> RIP
     INT -.wrote while stranded/.-> DOG
+    INT -.wrote while stranded/.-> GSHEP
+    INT -.wrote while stranded/.-> TGRIT
+    INT -.wrote while stranded/.-> MMEN
+    INT -.wrote while stranded/.-> CHAMY
     INT -.wrote while stranded/.-> SUY
     INT -.wrote while stranded/.-> TLD
     INT -.wrote while stranded/.-> THOR
@@ -113,5 +129,5 @@ Plan Editors]
     classDef authored fill:#1e1535,stroke:#7c3aed,stroke-width:1px,color:#c4b5fd;
     class CUF,RAIN,GWH,ROUND,GZ,B1,B2,B3,JB,DEP,CUT,INF,SYR,TAB,CON,MAR,INT,ELY core;
     class AB,BULK meta;
-    class TGW,SPR,RIP,DOG,SUY,TLD,THOR authored;
+    class TGW,SPR,RIP,DOG,GSHEP,TGRIT,MMEN,CHAMY,SUY,TLD,THOR authored;
 ```
