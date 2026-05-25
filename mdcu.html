@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MDCU Dossier — The Subject</title>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0a0d13;
+  --surface: #111318;
+  --surface2: #1a1d26;
+  --border: #252836;
+  --text: #d0d4e0;
+  --muted: #6e7490;
+  --accent: #4a9eff;
+  --accent-dim: #1a3a6e;
+  --green: #2ea44f;
+  --green-dim: #0d2818;
+  --amber: #c89520;
+  --amber-dim: #2e2008;
+  --red: #e84040;
+  --red-dim: #2e0808;
+  --purple: #a78bfa;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+.cls-banner {
+  background: var(--red);
+  color: white;
+  text-align: center;
+  padding: 5px 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.subject-id h1 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: white;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.subject-id .subtitle {
+  color: var(--muted);
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 10px 28px;
+  font-size: 12px;
+}
+
+.meta-item label {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.meta-item span {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.tab-nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 18px;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+.content-area {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 32px;
+}
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+h2 {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  letter-spacing: 0.03em;
+}
+h2:first-child { margin-top: 0; }
+
+/* ---- ARC CARDS ---- */
+.arc-grid { display: grid; gap: 16px; }
+
+.arc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 18px 22px;
+}
+
+.arc-card.endgame { border-left-color: var(--red); }
+.arc-card.sim { border-left-color: var(--amber); }
+
+.arc-card .era-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.arc-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2px;
+}
+
+.arc-card .alias {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.arc-card p { font-size: 13px; line-height: 1.7; }
+
+.arc-card .connector {
+  font-size: 12px;
+  color: var(--muted);
+  font-style: italic;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+/* ---- TIMELINE ---- */
+.timeline { position: relative; padding-left: 44px; }
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent) 0%, var(--purple) 65%, var(--red) 100%);
+}
+
+.tl-item { position: relative; margin-bottom: 24px; }
+
+.tl-dot {
+  position: absolute;
+  left: -39px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  z-index: 1;
+}
+.tl-dot.meta { background: var(--purple); }
+.tl-dot.sim  { background: var(--amber); }
+.tl-dot.end  { background: var(--red); }
+
+.tl-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 14px 18px;
+}
+
+.tl-card .tl-era {
+  font-size: 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+
+.tl-card .tl-film { font-size: 14px; font-weight: 600; color: white; margin-bottom: 2px; }
+.tl-card .tl-alias { font-family: 'Courier New', monospace; font-size: 11px; color: var(--accent); margin-bottom: 8px; }
+.tl-card p { font-size: 12px; color: var(--text); line-height: 1.6; }
+
+/* ---- FILMOGRAPHY TABLE ---- */
+.film-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+.film-table th {
+  background: var(--surface2);
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.film-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.film-table tr:last-child td { border-bottom: none; }
+.film-table tr:hover td { background: var(--surface); }
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 2px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge.canonical  { background: var(--green-dim);  color: var(--green);  border: 1px solid var(--green); }
+.badge.authored   { background: #1e1535; color: #c4b5fd; border: 1px solid #7c3aed; }
+.badge.candidate  { background: var(--amber-dim);  color: var(--amber);  border: 1px solid var(--amber); }
+.badge.noncanon   { background: var(--surface2);   color: var(--muted);  border: 1px solid var(--border); }
+
+.film-title  { font-weight: 600; color: white; white-space: nowrap; }
+.film-year   { color: var(--muted); font-family: 'Courier New', monospace; white-space: nowrap; }
+.film-alias  { font-style: italic; color: var(--accent); white-space: nowrap; }
+.film-notes  { color: var(--muted); font-size: 12px; max-width: 360px; }
+
+/* ---- UNIVERSE RULES ---- */
+.rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.rule-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 18px 22px;
+}
+
+.rule-card.meta-force { border-left: 3px solid var(--purple); }
+.rule-card.through-line { grid-column: 1 / -1; border-left: 3px solid var(--accent); }
+
+.rule-card h4 {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.rule-card.meta-force h4 { color: var(--purple); }
+
+.rule-card p, .rule-card li { font-size: 13px; color: var(--text); line-height: 1.7; }
+.rule-card ul { padding-left: 16px; }
+.rule-card li { margin-bottom: 6px; }
+.rule-card em { color: white; font-style: italic; }
+
+/* ---- FOOTER ---- */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 16px 32px;
+  text-align: center;
+  color: var(--muted);
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+  .content-area { padding: 24px 16px; }
+  .site-header { flex-direction: column; gap: 20px; }
+  .meta-grid { grid-template-columns: 1fr 1fr; }
+  .rules-grid { grid-template-columns: 1fr; }
+  .rule-card.through-line { grid-column: 1; }
+}
+</style>
+</head>
+<body>
+
+<div class="cls-banner">classification: cinematic &nbsp;·&nbsp; mdcu dossier &nbsp;·&nbsp; eyes only &nbsp;·&nbsp; do not distribute</div>
+
+<header class="site-header">
+  <div class="subject-id">
+    <h1>The Subject</h1>
+    <div class="subtitle">Matt Damon Cinematic Universe &nbsp;·&nbsp; Unified Identity Profile &nbsp;·&nbsp; Operational Dossier</div>
+  </div>
+  <div class="meta-grid">
+    <div class="meta-item">
+      <label>Known aliases</label>
+      <span style="color: var(--accent);">18+</span>
+    </div>
+    <div class="meta-item">
+      <label>Timeline span</label>
+      <span>1991 – 22nd c.</span>
+    </div>
+    <div class="meta-item">
+      <label>Status</label>
+      <span style="color: var(--green);">ACTIVE</span>
+    </div>
+    <div class="meta-item">
+      <label>Confirmed origin</label>
+      <span>Boston, MA</span>
+    </div>
+    <div class="meta-item">
+      <label>Threat classification</label>
+      <span style="color: var(--amber);">CIVILIZATIONAL</span>
+    </div>
+    <div class="meta-item">
+      <label>Last confirmed location</label>
+      <span>Elysium orbit</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('overview', this)">Life Arc</button>
+  <button class="tab-btn" onclick="switchTab('timeline', this)">Timeline</button>
+  <button class="tab-btn" onclick="switchTab('filmography', this)">Filmography</button>
+  <button class="tab-btn" onclick="switchTab('universe', this)">Universe Rules</button>
+</nav>
+
+<main class="content-area">
+
+  <!-- LIFE ARC -->
+  <div id="overview" class="tab-panel active">
+    <div class="arc-grid">
+
+      <div class="arc-card">
+        <div class="era-label">Origin &nbsp;·&nbsp; South Boston</div>
+        <h4>Good Will Hunting</h4>
+        <div class="alias">Will Hunting</div>
+        <p>This is where it begins. South Boston. A janitor with a sealed juvenile record, a mathematical gift that has no business being in this zip code, and a therapist who keeps asking the wrong questions in exactly the right way. The math is extraordinary — the kind that gets slid under doors at MIT. The person doing it is determined to stay invisible.</p>
+        <p style="margin-top:10px;">He meets Chuckie Sullivan. The friendship is real — the only relationship in his entire arc that predates all the cover identities, that isn't transactional, that nobody assigned him. Chuckie tells him he'd be an insult to his neighborhood if he didn't go take what was being offered. He does. But he doesn't go to California. He goes to South Africa on an academic scholarship. Chuckie stays. The friendship survives everything.</p>
+        <div class="connector">→ The scholarship opens a door. He goes.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">University &nbsp;·&nbsp; South Africa &nbsp;·&nbsp; 1994–1995</div>
+        <h4>Invictus</h4>
+        <div class="alias">François Pienaar</div>
+        <p>University in post-apartheid South Africa. He plays rugby. He is very good at it. By the time the 1995 World Cup arrives, he is somehow the Springboks captain, standing on a pitch in Johannesburg while Nelson Mandela shakes his hand in a green and gold jersey.</p>
+        <p style="margin-top:10px;">He has seen rigged systems his whole life — a South Boston neighborhood that consumed everyone in it, institutions that protected themselves at any cost. What he watches Mandela do is different. He takes a broken institution — the Springboks, symbol of apartheid — and uses it for reconciliation. The system, wielded with enough clarity and will, can be made to serve something real. He has never seen this before. He goes home believing, briefly, that the law might work the same way.</p>
+        <div class="connector">→ He goes home. He needs money. He has the math. He goes to Vegas.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Vegas crash &nbsp;·&nbsp; Pre-law</div>
+        <h4>Rounders</h4>
+        <div class="alias">Mike McDermott</div>
+        <p>He has the math. He goes to Vegas. He loses everything. The same precision that guided him through university and onto a World Cup pitch finds its limit against the house's infinite bankroll and his own escalating certainty. He walks out broke.</p>
+        <p style="margin-top:10px;">He enrolls in law school anyway. The Vegas loss sharpens something: the difference between a rigged game and a just system is whether anyone enforces the rules. He has watched Mandela enforce them. He intends to be that kind of person. The underground card rooms and Russian-backed games he passes through on his way out of the gambling world introduce him to a language — back-channel deals, compromised judges, the price of everything — that will be useful later.</p>
+        <div class="connector">→ Cleaned out and clear-eyed, he goes to law school in Memphis.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Early legal crusader &nbsp;·&nbsp; Memphis</div>
+        <h4>The Rainmaker</h4>
+        <div class="alias">Rudy Baylor</div>
+        <p>First case. An insurance company refuses to pay for a dying young man's bone marrow transplant. He fights them as Rudy Baylor. He wins. The company dissolves to escape the judgment. The boy is already dead. The system that permitted all of this remains exactly as it was.</p>
+        <p style="margin-top:10px;">He watched Mandela use the system to change everything. He used the system and changed nothing except the name on a bankruptcy filing. The law is not the same tool in Memphis that it was in Johannesburg. The lesson lands: winning inside broken rules leaves the rules intact. He leaves law. He enlists.</p>
+        <div class="connector">→ If the rules can't be enforced from inside, maybe force is the language that works.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Military crucible &nbsp;·&nbsp; Gulf War &nbsp;·&nbsp; Just before Iraq</div>
+        <h4>Courage Under Fire</h4>
+        <div class="alias">Specialist Ilario</div>
+        <p>He enlists. Ends up in the Gulf War. A friendly-fire incident. He falsifies his account under pressure, covering for himself and his unit. He survives. His conscience does not make it out intact. The institutional machinery rewards his silence and punishes those who might speak. He has now seen this pattern in legal institutions, gambling networks, and military command structures. The machinery is the same everywhere. Only the uniforms change.</p>
+        <div class="connector">→ The Gulf War ends. Iraq is coming. He stays in.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Military crucible &nbsp;·&nbsp; Iraq &nbsp;·&nbsp; Early 2000s</div>
+        <h4>Green Zone</h4>
+        <div class="alias">Roy Miller</div>
+        <p>Chief Warrant Officer Roy Miller in the 2003 Iraq invasion. He leads a unit hunting for weapons of mass destruction. He finds none. He discovers the intelligence justifying his missions was fabricated from the start. He pushes back against his own chain of command, in theater, without authorization. He doesn't win the argument. Someone watching his profile sees something: a man who keeps pulling the thread anyway, regardless of who told him to stop.</p>
+        <div class="connector">→ His Iraq record and psychological profile mark him for Treadstone.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Black-ops weapon &nbsp;·&nbsp; Global &nbsp;·&nbsp; Early–mid 2000s</div>
+        <h4>The Bourne Series</h4>
+        <div class="alias">Jason Bourne / David Webb</div>
+        <p>The CIA's Treadstone program takes him apart. Memories stripped. A new identity — Jason Bourne, working name David Webb — engineered over the underlying person. The math prodigy, the rugby captain, the Vegas gambler, the Memphis lawyer, the Gulf War soldier: all of it goes under. When the program begins to fail and fragments surface, his first instinct is the one it's always been. He dismantles the program from inside. It takes four films and most of a decade.</p>
+        <div class="connector">→ Burned, off-grid, operationally finished. A transitional period: he runs with a professional heist crew, learning to steal and deceive in plain sight. Crime school, with exits. It doesn't last.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Criminal immersion I &nbsp;·&nbsp; Boston &nbsp;·&nbsp; Mid-2000s</div>
+        <h4>The Departed</h4>
+        <div class="alias">Colin Sullivan</div>
+        <p>The assignment sends him back to South Boston as Colin Sullivan, a cop on Frank Costello's payroll since before he joined the force. Back in Southie, the old neighborhood. Chuckie is still there — still the friend, still the one person who knew him before all of this. The Ocean's years were crime with exits. The Departed has no exit. Years of playing both sides without a fixed self to return to collapse into pure situational loyalty. It ends badly.</p>
+        <div class="connector">→ Extracted. A parallel operation has been running simultaneously and has gone further.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Criminal immersion II &nbsp;·&nbsp; Mid-2000s</div>
+        <h4>The Cut</h4>
+        <div class="alias">[Alias classified]</div>
+        <p>A concurrent criminal assignment in the same moral register as The Departed, and Chuckie is in this one too — the old friend from South Boston, surfacing in the underworld like a reminder of who he was before the identities began. Where The Departed is about institutional rot and double loyalty, The Cut is about what happens when the cover stops being a cover. The question of which side he is actually on becomes genuinely unanswerable. Both assignments collapse together.</p>
+        <div class="connector">→ Both chapters end. He is rebuilt in the corporate world, where the corruption at least wears a suit.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Corporate fracture &nbsp;·&nbsp; Illinois &nbsp;·&nbsp; Late 2000s</div>
+        <h4>The Informant!</h4>
+        <div class="alias">Mark Whitacre</div>
+        <p>Agribusiness executive and FBI informant. The accumulated weight of his compartmentalized identities finally becomes clinically visible — as documented paranoia, mania, and an erratic relationship to the truth that has nothing to do with any specific cover and everything to do with years of being no one in particular. Federal prison provides an enforced pause. He reemerges, lighter, with a clearer view of who he actually is.</p>
+        <div class="connector">→ The corporate chapter ends. He moves to Europe as an energy analyst.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Global energy cover &nbsp;·&nbsp; Geneva / Gulf &nbsp;·&nbsp; Mid–late 2000s</div>
+        <h4>Syriana</h4>
+        <div class="alias">Bryan Woodman</div>
+        <p>Geneva-based energy analyst, adviser to a reform-minded Gulf prince. His son dies at the royal estate. The prince is assassinated. He witnesses how oil markets, corporate mergers, and covert operations interact at the highest altitudes of power, and how a man trying to use those systems for something good gets killed for it. He is, by now, practiced at surviving things that should end him.</p>
+        <div class="connector">→ Back stateside. He attempts the one thing he has never tried: legitimate public life.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Glimpse behind the curtain &nbsp;·&nbsp; New York &nbsp;·&nbsp; Around 2010s</div>
+        <h4>The Adjustment Bureau</h4>
+        <div class="alias">David Norris</div>
+        <p>Rising New York politician. He sees the Adjustment Bureau — the plan editors who step through doors, freeze moments, and enforce an invisible architecture for human history. He realizes his unlikely survival across five decades of improbable circumstances has not been luck. He refuses the plan anyway. He keeps the love. He defies the plan. Both stick.</p>
+        <div class="connector">→ Genuine personal loyalty anchors him briefly before the world demands his attention at a different scale.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Planet-scale stakes &nbsp;·&nbsp; Early 2010s</div>
+        <h4>Contagion</h4>
+        <div class="alias">Mitch Emhoff</div>
+        <p>He survives a lethal global pandemic while his wife and stepson die around him. Inexplicably immune. His biological profile and survival record — maintained since his Treadstone days — reach a federal agency with a Mars mission in early planning stages and a question about human resilience in extreme isolation.</p>
+        <div class="connector">→ NASA makes contact. The mission is a decade out. He says yes immediately.</div>
+      </div>
+
+      <div class="arc-card">
+        <div class="era-label">Escape to space &nbsp;·&nbsp; Mars &nbsp;·&nbsp; 2030s</div>
+        <h4>The Martian</h4>
+        <div class="alias">Mark Watney</div>
+        <p>NASA botanist and astronaut, left for dead on Mars after a violent storm. He is not dead. He survives through engineering creativity, rigorous math, and the mordant humor of a man who has been in worse situations than this and knows it. The Will Hunting mind — finally unencumbered — operates at full capacity for the first time in decades. Earth finds him. He comes home. Earth is worse than when he left.</p>
+        <div class="connector">→ Returns to a Blight-ravaged Earth. Volunteers for the one-way Lazarus mission.</div>
+      </div>
+
+      <div class="arc-card sim">
+        <div class="era-label">Exile by wormhole &nbsp;·&nbsp; Ice planet &nbsp;·&nbsp; Late 21st century</div>
+        <h4>Interstellar</h4>
+        <div class="alias">Dr. Mann</div>
+        <p>Under the alias Dr. Mann, he goes through a wormhole on a one-way survey mission to evaluate a frozen planet as a candidate for human survival. He lands. He waits. The years accumulate. The isolation is total — no one to perform for, no cover to maintain, no institution to serve or subvert. For the first time in his adult life he has nothing to do but exist with himself. He discovers this is intolerable. He writes.</p>
+        <p style="margin-top:10px;">He writes heroic stories, mythic ones, absurdist ones. He writes himself as a soldier worth dying to rescue, a mercenary who chooses loyalty to strangers, a medieval knight demanding the system work correctly. He writes a man who murders someone and assumes their identity — while planning to falsify his own data and steal a spacecraft. He writes himself as a fallen angel. And when he writes Dogma, he writes his old friend from South Boston as Bartleby — the loyal companion, expelled together from paradise. The friend who knew him before all the identities. Across nine stories written alone on an ice planet, the one constant is the friend.</p>
+        <p style="margin-top:10px;">Then the Endurance arrives. He falsifies his findings. He tries to take the ship. He fails. He dies in the airlock explosion. The bulk beings — higher-dimensional entities with access to the full timeline — do not revive him. They preserve a thread.</p>
+        <div class="connector">→ The writings remain. The thread continues into a broken world.</div>
+      </div>
+
+      <div class="arc-card" style="border-left-color: var(--purple);">
+        <div class="era-label">Dr. Mann's authored works &nbsp;·&nbsp; Written during Interstellar isolation</div>
+        <h4>The Catalog</h4>
+        <div class="alias">Various</div>
+        <p>The stories he wrote on the ice planet, in approximate order of apparent psychological function:</p>
+        <ul style="margin-top:10px; padding-left:18px; font-size:13px; line-height:1.9; color:var(--text);">
+          <li><strong>Saving Private Ryan</strong> — He writes himself as a WWII soldier worth sending eight men to die for. A fantasy of being valued enough to rescue.</li>
+          <li><strong>All the Pretty Horses</strong> — A young man with a code of honor operating without institutional backing. Simpler times, cleaner rules.</li>
+          <li><strong>The Talented Mr. Ripley</strong> — A man who murders someone and assumes their identity. Written while he is planning to falsify data and steal a spacecraft. He may not have noticed the parallel.</li>
+          <li><strong>The Great Wall</strong> — He writes himself as William Garin, a mercenary who chooses loyalty to strangers for no institutional reason. The thing he has never quite managed in real life.</li>
+          <li><strong>Dogma</strong> — Two fallen angels, expelled from paradise, trying to bend metaphysics to get back in. He writes himself as Loki. He writes his old friend from South Boston — Chuckie, the one who told him to go take what was being offered — as Bartleby. The friendship that predates every cover identity survives even into his fiction. This is perhaps the most revealing detail in the entire catalog.</li>
+          <li><strong>Suburbicon</strong> — A man in a perfect house committing increasingly terrible acts. Dark period.</li>
+          <li><strong>The Last Duel</strong> — A knight who insists on institutional justice even when the institution is obviously corrupt. He knows this character intimately.</li>
+          <li><strong>Thor: Love and Thunder (Asgardian actor)</strong> — He writes himself into Norse mythology as a stage actor performing a heroic Loki drama. A story within a story within a story. The isolation had been going on for some time.</li>
+          <li><strong>Stuck on You</strong> — Two conjoined brothers running a restaurant on Martha's Vineyard who want to pursue their dreams separately. The least self-aggrandizing thing he ever wrote. Something about total isolation made him want to imagine being permanently, physically attached to another person.</li>
+        </ul>
+      </div>
+
+      <div class="arc-card endgame">
+        <div class="era-label">Class war endgame &nbsp;·&nbsp; 22nd century &nbsp;·&nbsp; Earth / Elysium</div>
+        <h4>Elysium</h4>
+        <div class="alias">Max Da Costa</div>
+        <p>Centuries after his origin — from Earth's frame — the thread the bulk beings preserved surfaces in a new body: Max Da Costa, a factory worker in a world where elites live on the orbital station Elysium and the masses below die from diseases Elysium could cure in minutes. Exposed to a lethal radiation dose on the factory floor, he has days. His final act is to hack the system and make Elysium's medical technology universal. The move kills him. It closes the loop: Rudy Baylor sued an insurer that refused to fund a life-saving treatment. Max Da Costa hacked the infrastructure that refused to share one. Different body, different century, different scale. Same argument. The rigged system. The dying person. One individual who refuses the terms.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div id="timeline" class="tab-panel">
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">South Boston &nbsp;·&nbsp; Origin</div>
+          <div class="tl-film">Good Will Hunting</div>
+          <div class="tl-alias">Will Hunting</div>
+          <p>Origin. Janitor, math prodigy, sealed record. Meets Chuckie Sullivan — the one person who will know him before all the identities begin. Leaves for South Africa on a scholarship. Chuckie stays.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">South Africa &nbsp;·&nbsp; 1994–1995</div>
+          <div class="tl-film">Invictus</div>
+          <div class="tl-alias">François Pienaar</div>
+          <p>University in post-apartheid South Africa. Plays rugby; somehow captains the Springboks to the 1995 World Cup. Watches Mandela deploy institutional power for reconciliation. Believes, briefly, that the system can work. Goes home and goes to law school.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Pre-law &nbsp;·&nbsp; Vegas</div>
+          <div class="tl-film">Rounders</div>
+          <div class="tl-alias">Mike McDermott</div>
+          <p>Needs money before law school. Has the math. Goes to Vegas. Loses everything. Enrolls anyway — the crash sharpens his conviction that the difference between a rigged game and a just system is enforcement.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Memphis &nbsp;·&nbsp; Law school</div>
+          <div class="tl-film">The Rainmaker</div>
+          <div class="tl-alias">Rudy Baylor</div>
+          <p>First case. Wins against a corrupt insurer. The boy is already dead. The system remains intact. The Mandela model doesn't transfer. He enlists.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Gulf War &nbsp;·&nbsp; Pre-Iraq</div>
+          <div class="tl-film">Courage Under Fire</div>
+          <div class="tl-alias">Specialist Ilario</div>
+          <p>Gulf War deployment. Friendly-fire incident. He falsifies his account. The institutional machinery rewards his silence. He has now seen this pattern in the law, the gambling world, and the military. He stays in for Iraq.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Iraq &nbsp;·&nbsp; Early 2000s</div>
+          <div class="tl-film">Green Zone</div>
+          <div class="tl-alias">Roy Miller</div>
+          <p>Army CWO discovers WMD intelligence is fabricated. Pushes back without authorization. Gets flagged by CIA talent scouts.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Early–mid 2000s &nbsp;·&nbsp; Global</div>
+          <div class="tl-film">The Bourne Identity / Supremacy / Ultimatum / Jason Bourne</div>
+          <div class="tl-alias">Jason Bourne / David Webb</div>
+          <p>Treadstone builds a deniable field asset from his raw materials. He remembers too much. The program collapses across four films. He dismantles it himself.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Mid-2000s &nbsp;·&nbsp; Boston</div>
+          <div class="tl-film">The Departed</div>
+          <div class="tl-alias">Colin Sullivan</div>
+          <p>Deep cover as a corrupt Boston cop on Costello's payroll. Back in Southie — Chuckie is still there, the old friend, the one constant. The Ocean's years taught him the mechanics; The Departed removes the last guardrails. Dual loyalties corrode any remaining fixed identity. Ends badly.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Mid-2000s &nbsp;·&nbsp; Concurrent</div>
+          <div class="tl-film">The Cut</div>
+          <div class="tl-alias">[Alias classified]</div>
+          <p>A parallel or adjacent criminal assignment operating in the same moral register as The Departed. The question of which side he's actually on becomes genuinely unanswerable. Both assignments collapse together.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Late 2000s &nbsp;·&nbsp; Illinois</div>
+          <div class="tl-film">The Informant!</div>
+          <div class="tl-alias">Mark Whitacre</div>
+          <p>Agribusiness informant. Accumulated identities surface as documented mania. Federal prison. Reemerges with a clearer self-picture.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Mid–late 2000s &nbsp;·&nbsp; Geneva / Gulf</div>
+          <div class="tl-film">Syriana</div>
+          <div class="tl-alias">Bryan Woodman</div>
+          <p>Energy analyst drawn into oil politics and covert ops. Son dies. Reform prince dies. He survives, as usual.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Around 2010s &nbsp;·&nbsp; New York</div>
+          <div class="tl-film">The Adjustment Bureau</div>
+          <div class="tl-alias">David Norris</div>
+          <p>Sees the plan editors shaping his life. Refuses the plan. First act in forty years driven purely by personal loyalty rather than institutional assignment.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">Early 2010s</div>
+          <div class="tl-film">Contagion</div>
+          <div class="tl-alias">Mitch Emhoff</div>
+          <p>Survives lethal pandemic with inexplicable immunity. Biological profile and survival record reach NASA's mission planning team.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-era">2030s &nbsp;·&nbsp; Mars</div>
+          <div class="tl-film">The Martian</div>
+          <div class="tl-alias">Mark Watney</div>
+          <p>Left for dead on Mars. Survives through engineering and mathematics — the Will Hunting mind, finally unencumbered, at full power.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot meta"></div>
+        <div class="tl-card">
+          <div class="tl-era">Late 21st century &nbsp;·&nbsp; Ice planet</div>
+          <div class="tl-film">Interstellar</div>
+          <div class="tl-alias">Dr. Mann</div>
+          <p>One-way Lazarus mission through a wormhole. Years of total isolation on a frozen planet. He writes: heroic stories, mythic stories, one absurdist comedy, one story about a man who steals another man's identity (written while planning to steal a spacecraft). Then the Endurance arrives. He falsifies his findings. He tries to take the ship. He dies in the airlock explosion. Bulk beings preserve a thread.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="background: var(--purple);"></div>
+        <div class="tl-card">
+          <div class="tl-era">Written during Interstellar isolation &nbsp;·&nbsp; Dr. Mann's catalog</div>
+          <div class="tl-film">Authored works</div>
+          <div class="tl-alias">William Garin / Jean de Carrouges / Pvt. Ryan / Tom Ripley / Loki / Bob Tenor / and others</div>
+          <p>Nine stories written during the years on the ice planet. Heroic wish-fulfillment, mythic grandiosity, absurdist comedy, and at least one story that reads as direct psychological projection of what he was about to do.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot end"></div>
+        <div class="tl-card">
+          <div class="tl-era">22nd century &nbsp;·&nbsp; Earth / Elysium orbit</div>
+          <div class="tl-film">Elysium</div>
+          <div class="tl-alias">Max Da Costa</div>
+          <p>Dying factory worker hacks Elysium's medical tech to universalize it. Final act mirrors Baylor's first lawsuit. The loop closes.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FILMOGRAPHY -->
+  <div id="filmography" class="tab-panel">
+    <p style="color: var(--muted); font-size: 13px; margin-bottom: 24px; line-height: 1.7;">
+      Complete assessed filmography.
+      <span class="badge canonical">Canonical</span> = lived experience; a real identity in the MDCU.
+      <span class="badge authored">Authored</span> = written by Dr. Mann during his isolation on the ice planet.
+      <span class="badge candidate">Candidate</span> = viable for future incorporation.
+      <span class="badge noncanon">Non-canonical</span> = tonal or logical conflict with universe rules.
+    </p>
+    <table class="film-table">
+      <thead>
+        <tr>
+          <th>Film</th>
+          <th>Year</th>
+          <th>Character</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="film-title">Courage Under Fire</td>
+          <td class="film-year">1996</td>
+          <td class="film-alias">Spec. Ilario</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Origin chapter. Gulf War soldier who falsifies a friendly-fire account; moral failure drives his turn to law.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Rainmaker</td>
+          <td class="film-year">1997</td>
+          <td class="film-alias">Rudy Baylor</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Memphis lawyer vs. corrupt insurer. Establishes the core thematic loop closed by Elysium.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Good Will Hunting</td>
+          <td class="film-year">1997</td>
+          <td class="film-alias">Will Hunting</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">South Boston prodigy hiding legal past. Mathematical genius surfaces as the operational asset that sustains every future alias.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Rounders</td>
+          <td class="film-year">1998</td>
+          <td class="film-alias">Mike McDermott</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">New York underground poker. Bridges Boston and Iraq chapters; introduces criminal networks and draws CIA-adjacent attention.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Saving Private Ryan</td>
+          <td class="film-year">1998</td>
+          <td class="film-alias">Pvt. James Ryan</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">Dr. Mann writes himself as a WWII soldier worth sending eight men to die for. A transparent fantasy of being valued enough to rescue — written by a man on an ice planet hoping someone comes for him.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Dogma</td>
+          <td class="film-year">1999</td>
+          <td class="film-alias">Loki</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">He writes himself as a fallen angel expelled from paradise, trying to bend metaphysics to get back in. The grandiosity of a man who has been alone too long.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Talented Mr. Ripley</td>
+          <td class="film-year">1999</td>
+          <td class="film-alias">Tom Ripley</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">A man who murders someone and assumes their identity. Written while Dr. Mann is actively falsifying survey data and preparing to attempt to steal a spacecraft. He may not have noticed the parallel.</td>
+        </tr>
+        <tr>
+          <td class="film-title">All the Pretty Horses</td>
+          <td class="film-year">2000</td>
+          <td class="film-alias">John Grady Cole</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">A young man with a clean code of honor operating without institutional backing, in simpler times with clearer rules. Wish fulfillment in a different register.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Ocean's Eleven</td>
+          <td class="film-year">2001</td>
+          <td class="film-alias">Linus Caldwell</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">Transitional arc between Rounders and the full criminal immersion of The Departed and The Cut. After the Bourne program burns, he runs with a professional heist crew: learning misdirection, identity performance, and the long con by choice rather than by programming. Crime school — clever, controlled, with exits. Three films (2001–2007) track the arc from apprentice to peer.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Bourne Identity</td>
+          <td class="film-year">2002</td>
+          <td class="film-alias">Jason Bourne</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Treadstone activation. Memory stripped, new identity constructed from available raw material.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Ocean's Twelve</td>
+          <td class="film-year">2004</td>
+          <td class="film-alias">Linus Caldwell</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">The con gets more elaborate; the team moves to Europe. The skills being developed here will be fully weaponized in The Departed and The Cut.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Bourne Supremacy</td>
+          <td class="film-year">2004</td>
+          <td class="film-alias">Jason Bourne</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Memory fragments return. Institutional collapse begins.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Syriana</td>
+          <td class="film-year">2005</td>
+          <td class="film-alias">Bryan Woodman</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Geneva energy analyst in Gulf oil politics. Personal tragedy deepens commitment past self-interest.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Departed</td>
+          <td class="film-year">2006</td>
+          <td class="film-alias">Colin Sullivan</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Deep cover corrupt Boston cop. The Ocean's years were crime as craft; The Departed is crime as dissolution. Dual loyalty corrodes the last fixed self.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Cut</td>
+          <td class="film-year">2025</td>
+          <td class="film-alias">[Classified]</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Concurrent criminal assignment in the same moral register as The Departed. Where The Departed is about institutional rot and double loyalty, The Cut is about what happens when the cover stops being a cover. Both collapse together.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Bourne Ultimatum</td>
+          <td class="film-year">2007</td>
+          <td class="film-alias">Jason Bourne</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Treadstone fully exposed and dismantled.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Ocean's Thirteen</td>
+          <td class="film-year">2007</td>
+          <td class="film-alias">Linus Caldwell</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">Final heist before the Departed/Cut era begins in earnest. The last assignment where there's still a clean exit.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Informant!</td>
+          <td class="film-year">2009</td>
+          <td class="film-alias">Mark Whitacre</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Agribusiness informant. Compartmentalized identities surface as documented instability.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Invictus</td>
+          <td class="film-year">2009</td>
+          <td class="film-alias">François Pienaar</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">University chapter — South Africa, 1994–1995. He plays rugby, captains the Springboks to the World Cup, and watches Mandela deploy institutional power for reconciliation. The only time he sees the system used as a tool for good. Seeds his turn to law school.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Green Zone</td>
+          <td class="film-year">2010</td>
+          <td class="film-alias">Roy Miller</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Iraq WMD investigator. Establishes willingness to push back against institutional lies under live fire.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Adjustment Bureau</td>
+          <td class="film-year">2011</td>
+          <td class="film-alias">David Norris</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">First direct encounter with plan editors. Refuses the plan. Pivot from institutional actor to self-directed agent.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Contagion</td>
+          <td class="film-year">2011</td>
+          <td class="film-alias">Mitch Emhoff</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Pandemic survivor with inexplicable immunity. Biological profile reaches NASA mission planning.</td>
+        </tr>
+        <tr>
+          <td class="film-title">We Bought a Zoo</td>
+          <td class="film-year">2011</td>
+          <td class="film-alias">Benjamin Mee</td>
+          <td><span class="badge noncanon">Non-canonical</span></td>
+          <td class="film-notes">Domestic comedy-drama. The Subject does not buy zoos.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Promised Land</td>
+          <td class="film-year">2012</td>
+          <td class="film-alias">Steve Butler</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">Natural gas landman confronting fracking ethics. Corporate operative who turns — echoes Whitacre. Could bridge the Adjustment Bureau and Contagion chapters.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Behind the Candelabra</td>
+          <td class="film-year">2013</td>
+          <td class="film-alias">Scott Thorson</td>
+          <td><span class="badge noncanon">Non-canonical</span></td>
+          <td class="film-notes">Liberace's partner. Contextual incompatibility with the MDCU arc.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Elysium</td>
+          <td class="film-year">2013</td>
+          <td class="film-alias">Max Da Costa</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">22nd-century class war. Final act mirrors Baylor's first lawsuit. The loop closes.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Interstellar</td>
+          <td class="film-year">2014</td>
+          <td class="film-alias">Dr. Mann</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">One-way wormhole mission. Relativistic time dilation. Death and thread preservation by bulk beings.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Martian</td>
+          <td class="film-year">2015</td>
+          <td class="film-alias">Mark Watney</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Stranded on Mars. Mathematical survival. The Will Hunting mind, four decades and seven identities later, finally unencumbered.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Jason Bourne</td>
+          <td class="film-year">2016</td>
+          <td class="film-alias">David Webb / Jason Bourne</td>
+          <td><span class="badge canonical">Canonical</span></td>
+          <td class="film-notes">Final dismantling of the Bourne architecture. Webb identity confirmed and closed.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Great Wall</td>
+          <td class="film-year">2016</td>
+          <td class="film-alias">William Garin (authored)</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">Dr. Mann writes himself as a mercenary who chooses loyalty to strangers for no institutional reason — the thing he has never quite managed in real life. A story about becoming the person he couldn't be.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Stuck on You</td>
+          <td class="film-year">2003</td>
+          <td class="film-alias">Bob Tenor</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">Two conjoined brothers running a Martha's Vineyard restaurant. The least self-aggrandizing thing he ever wrote. Something about total isolation made him want to imagine being permanently, physically attached to another person. The most honest psychological tell in the whole catalog.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Downsizing</td>
+          <td class="film-year">2017</td>
+          <td class="film-alias">Paul Safranek</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">Near-future miniaturization sci-fi. Could work as a transitional era between Contagion and The Martian — retreat, then re-emergence toward space.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Suburbicon</td>
+          <td class="film-year">2017</td>
+          <td class="film-alias">Gardner Lodge</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">A man in a perfect house committing increasingly terrible acts while maintaining a placid surface. He was probably in a dark period when he wrote this one.</td>
+        </tr>
+        <tr>
+          <td class="film-title">The Last Duel</td>
+          <td class="film-year">2021</td>
+          <td class="film-alias">Jean de Carrouges</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">Medieval French knight who insists on institutional justice even when the institution is obviously rotten. He writes himself as a man who demands the system work correctly. He knows this character from the inside.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Ford v Ferrari</td>
+          <td class="film-year">2019</td>
+          <td class="film-alias">Carroll Shelby</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">Racing legend battling Ford corporate obstruction. Engineering excellence under pressure; cover identity during a gap in the Bourne operational calendar. Tone fits.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Stillwater</td>
+          <td class="film-year">2021</td>
+          <td class="film-alias">Bill Baker</td>
+          <td><span class="badge candidate">Candidate</span></td>
+          <td class="film-notes">Oklahoma roughneck navigating French legal bureaucracy. Post-Whitacre blue-collar deep cover; Marseille operation. Quietly fits the tone of the mid-era chapters.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Thor: Love and Thunder</td>
+          <td class="film-year">2022</td>
+          <td class="film-alias">Asgardian actor (as Loki)</td>
+          <td><span class="badge authored">Authored</span></td>
+          <td class="film-notes">He writes himself into Norse mythology as a stage actor performing a heroic Loki drama for an Asgardian audience. A story within a story within a story. The isolation had been going on for some time by this point.</td>
+        </tr>
+        <tr>
+          <td class="film-title">Oppenheimer</td>
+          <td class="film-year">2023</td>
+          <td class="film-alias">Leslie Groves</td>
+          <td><span class="badge noncanon">Non-canonical</span></td>
+          <td class="film-notes">Supporting role in a historical biopic. Groves is too distinctly a real person for the alias architecture.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- UNIVERSE RULES -->
+  <div id="universe" class="tab-panel">
+    <div class="rules-grid">
+
+      <div class="rule-card">
+        <h4>Core premise</h4>
+        <ul>
+          <li>All major Damon characters in grounded dramas and science fiction are different aliases and covers adopted by a single individual over one long life.</li>
+          <li>Legal, military, and intelligence institutions repeatedly recruit, reshape, and compartmentalize his identity.</li>
+          <li>Memory alteration and deep-cover work explain conflicting backstories, skills, and loyalties across eras.</li>
+          <li>Hard rule: no routine time travel. One source of temporal distortion only.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <h4>Time distortion — single source</h4>
+        <ul>
+          <li><strong>Interstellar only.</strong> Relativistic time dilation near massive objects, plus the intervention of higher-dimensional beings, is the universe's sole mechanism for temporal compression or extension.</li>
+          <li>All other apparent anachronisms (period-set films, historical settings) are treated as simulations or mythic reconstructions — not literal time travel.</li>
+          <li>This keeps the universe internally consistent without opening it to paradox loops.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <h4>Authored works (Dr. Mann's catalog)</h4>
+        <ul>
+          <li>Period-set and tonally anomalous films are explained not as simulations but as stories Dr. Mann wrote during his years of total isolation on the ice planet — before the Endurance arrived, before the falsification, before the airlock.</li>
+          <li>The catalog includes heroic wish-fulfillment (<em>Saving Private Ryan</em>, <em>The Great Wall</em>), mythic grandiosity (<em>Dogma</em>, <em>Thor: Love and Thunder</em>), psychological projection (<em>The Talented Mr. Ripley</em>, <em>Suburbicon</em>), and one deeply earnest absurdist comedy about conjoined twins (<em>Stuck on You</em>).</li>
+          <li>The Talented Mr. Ripley — a story about murdering someone and assuming their identity — was written while he was actively planning to falsify his survey data and attempt to commandeer a spacecraft. He may not have noticed the parallel.</li>
+          <li>The authored works reveal more about his psychology than any of his actual cover identities, precisely because no one was supposed to read them.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card">
+        <h4>Identity mechanics</h4>
+        <ul>
+          <li>Deep cover and selective memory alteration explain contradictions between backstories.</li>
+          <li>Genuine psychological fracture — visible in The Informant! and Interstellar — results from accumulated compartmentalization across decades, not from any single assignment.</li>
+          <li>Core signature across every era: statistically improbable survival, mathematical precision under pressure, reflexive anti-institutional instinct regardless of which institution he's currently serving.</li>
+        </ul>
+      </div>
+
+      <div class="rule-card meta-force">
+        <h4>Meta-force: The Adjustment Bureau</h4>
+        <p>Mid-level plan editors operating under a hidden architecture for human history. They step through doors, freeze moments, and redirect events. Their presence spans the entire arc — nudging his earliest choices (Baylor's case selection, his Treadstone recruitment), and becoming directly visible to him for the first time in the Norris chapter. They are planners, not architects. The architects are elsewhere.</p>
+      </div>
+
+      <div class="rule-card meta-force">
+        <h4>Meta-force: The Bulk Beings</h4>
+        <p>The higher-dimensional entities in Interstellar — future humans or related consciousness — who can visualize entire timelines as spatial objects and make subtle edits. They are the architects the Adjustment Bureau ultimately serves, though neither party may fully know it. Their intervention after Dr. Mann's death on the ice planet is what allows the thread to continue. They do not revive him. They preserve the pattern.</p>
+      </div>
+
+      <div class="rule-card through-line">
+        <h4>Thematic through-line</h4>
+        <p>Across every identity, in every era, across every institution that recruits and reshapes and discards him, the same argument recurs: <em>the system is rigged, it is costing someone their life, and one individual is going to do something about it even when the institution says otherwise.</em></p>
+        <p style="margin-top:10px;">Rudy Baylor sues an insurer. Roy Miller pulls a thread he was ordered not to pull. Jason Bourne tears down the program that built him. Max Da Costa hacks Elysium. The scale changes. The politics shift. The body may not even be the same. The argument is.</p>
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  MDCU DOSSIER &nbsp;·&nbsp; COMPILED FOR INTERNAL USE &nbsp;·&nbsp; NOT FOR DISTRIBUTION &nbsp;·&nbsp; CLASSIFICATION: CINEMATIC
+</footer>
+
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
