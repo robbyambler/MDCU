@@ -70,9 +70,9 @@ Loki]
         GSHEP[The Good Shepherd
 Edward Wilson]
         TGRIT[True Grit
-Rooster Cogburn]
+LaBoeuf]
         MMEN[The Monuments Men
-Frank Stokes]
+James Granger]
         SUY[Stuck on You
 Bob Tenor]
         TLD[The Last Duel

@@ -42,8 +42,8 @@ Stories written during isolation on the ice planet. Not simulations — fiction.
 - *The Great Wall* — mercenary who chooses loyalty to strangers
 - *Dogma* — two fallen angels (him as Loki, Chuckie as Bartleby) expelled from paradise together
 - *The Good Shepherd* — writes himself as the founding architect of the CIA, from the ice planet where the CIA's creation erased him
-- *True Grit* — a past-his-prime marshal who still gets the job done; a permission slip for the later chapters
-- *The Monuments Men* — preserving civilization's record while everything burns; written deep into the isolation
+- *True Grit* — writes himself as LaBoeuf, the pompous Texas Ranger who turns out to be more capable than he appears
+- *The Monuments Men* — writes himself as James Granger, preserving civilization's record while everything burns; written deep into the isolation
 - *Suburbicon* — man in a perfect house committing terrible acts
 - *The Last Duel* — knight demanding institutional justice from a corrupt system
 - *Thor: Love and Thunder* — Asgardian actor in a Loki stage drama; story within a story within a story
