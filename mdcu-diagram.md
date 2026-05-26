@@ -19,6 +19,12 @@ Will Hunting
         ROUND[Rounders
 Mike McDermott
 (NYC underground poker)]
+        O1[Ocean's Eleven
+Linus Caldwell]
+        O2[Ocean's Twelve
+Linus Caldwell]
+        O3[Ocean's Thirteen
+Linus Caldwell]
     end
 
     subgraph Military_&_Black_Ops
@@ -94,7 +100,7 @@ Plan Editors]
     end
 
     %% ====== CORE LIFE PROGRESSION (MOSTLY LINEAR) ======
-    CUF --> RAIN --> GWH --> ROUND --> GZ --> B1 --> B2 --> B3 --> JB
+    CUF --> RAIN --> GWH --> ROUND --> O1 --> O2 --> O3 --> GZ --> B1 --> B2 --> B3 --> JB
     JB --> DEP --> CUT --> INF --> SYR --> STILL --> TAB --> PROM --> CON --> MAR --> INT --> ELY
 
     %% ====== AUTHORED WORKS (WRITTEN DURING INTERSTELLAR ISOLATION) ======
@@ -124,7 +130,7 @@ Plan Editors]
     classDef meta fill:#e0f7fa,stroke:#006064,stroke-width:1px;
     classDef sim  fill:#fff8e1,stroke:#f9a825,stroke-width:1px;
     classDef authored fill:#1e1535,stroke:#7c3aed,stroke-width:1px,color:#c4b5fd;
-    class CUF,RAIN,GWH,ROUND,GZ,B1,B2,B3,JB,DEP,CUT,INF,SYR,TAB,CON,MAR,INT,ELY core;
+    class CUF,RAIN,GWH,ROUND,O1,O2,O3,GZ,B1,B2,B3,JB,DEP,CUT,INF,SYR,TAB,CON,MAR,INT,ELY core;
     class AB,BULK meta;
     class TGW,SPR,RIP,DOG,GSHEP,TGRIT,MMEN,SUY,TLD,THOR authored;
 ```

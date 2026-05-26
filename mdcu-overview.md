@@ -42,7 +42,17 @@ He goes to Vegas and loses everything. The same precision that guided him throug
 
 Memphis. First case. An insurance company refuses to pay for a dying young man's bone marrow transplant. He wins. The company dissolves to escape the judgment. The boy is already dead. The system that permitted all of this remains intact. He watched Mandela use the system to change a country. He used the system and changed nothing except the name on a bankruptcy filing. The Mandela model doesn't transfer. He leaves law. He enlists.
 
-*From here:* If the rules can't be enforced from inside, maybe force is the language that works.
+*From here:* The system failed him. He doesn't enlist yet. He tries one more alternative: crime with a code.
+
+---
+
+### 4b. Robin Hood period — *Ocean's Eleven / Twelve / Thirteen* (Linus Caldwell)
+
+He comes up through Danny Ocean's crew as the junior apprentice. The mathematical precision and ability to read a room that served him at the card table translate directly into misdirection, identity performance, and the long con. The targets are casinos and corrupt operators. The exits are clean. He believes the Robin Hood rationale, and it's not entirely wrong — the targets deserve it, nobody innocent gets hurt, and the money moves accordingly. Three films track his growth from rookie to trusted peer.
+
+What he doesn't know is that his profile has been noticed. Unusual skill set. No institutional affiliation. Operates clean and precise under pressure. Reads people with uncanny accuracy. Leaves no trail. Someone in a different line of work finds this very interesting.
+
+*From here:* Military recruitment. The exits he thought he had were never as clean as he believed.
 
 ---
 
@@ -66,7 +76,7 @@ Chief Warrant Officer Roy Miller, 2003 Iraq invasion. He discovers the WMD intel
 
 Treadstone takes him apart. Memories stripped. A new identity engineered over the underlying person. The math prodigy, the rugby captain, the Vegas gambler, the Memphis lawyer, the Gulf War soldier — all of it goes under. When the program fails and fragments surface, his first instinct is the one it's always been: dismantle the rigged system from inside. He does. It takes four films and most of a decade.
 
-*From here:* Burned, off-grid, finished. A transitional period: he runs with a professional heist crew, learning to steal and deceive in plain sight. Crime school, with exits. It doesn't last.
+*From here:* Burned, off-grid, finished. The heist skills from the Ocean's years surface again — this time without the team, without the rationale, and without the exits. It doesn't last.
 
 ---
 

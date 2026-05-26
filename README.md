@@ -17,20 +17,21 @@ This repo collects a tongue-in-cheek but internally consistent "Matt Damon Cinem
 | 2 | Invictus | François Pienaar | University / South Africa / rugby |
 | 3 | Rounders | Mike McDermott | Vegas crash → law school |
 | 4 | The Rainmaker | Rudy Baylor | Memphis law; first case |
-| 5 | Courage Under Fire | Spec. Ilario | Gulf War; pre-Iraq military |
-| 6 | Green Zone | Roy Miller | Iraq; flagged for Treadstone |
-| 7–10 | Bourne series | Jason Bourne / David Webb | |
-| 11 | The Departed | Colin Sullivan | Back in Southie; Chuckie reappears |
-| 11b | The Rip | [classified] | Chuckie reappears |
-| 12 | The Informant! | Mark Whitacre | |
-| 13 | Syriana | Bryan Woodman | |
-| 13b | Stillwater | Bill Baker | Goes to ground in Marseille |
-| 14 | The Adjustment Bureau | David Norris | |
-| 14b | Promised Land | Steve Butler | Corporate operative who turns |
-| 15 | Contagion | Mitch Emhoff | |
-| 16 | The Martian | Mark Watney | |
-| 17 | Interstellar | Dr. Mann | Writes 12 stories during isolation |
-| 18 | Elysium | Max Da Costa | Loop closes |
+| 5–7 | Ocean's Eleven / Twelve / Thirteen | Linus Caldwell | Robin Hood period; pre-military |
+| 8 | Courage Under Fire | Spec. Ilario | Gulf War; pre-Iraq military |
+| 9 | Green Zone | Roy Miller | Iraq; flagged for Treadstone |
+| 10–13 | Bourne series | Jason Bourne / David Webb | |
+| 14 | The Departed | Colin Sullivan | Back in Southie; Chuckie reappears |
+| 14b | The Rip | [classified] | Chuckie reappears |
+| 15 | The Informant! | Mark Whitacre | |
+| 16 | Syriana | Bryan Woodman | |
+| 16b | Stillwater | Bill Baker | Goes to ground in Marseille |
+| 17 | The Adjustment Bureau | David Norris | |
+| 17b | Promised Land | Steve Butler | Corporate operative who turns |
+| 18 | Contagion | Mitch Emhoff | |
+| 19 | The Martian | Mark Watney | |
+| 20 | Interstellar | Dr. Mann | Writes 12 stories during isolation |
+| 21 | Elysium | Max Da Costa | Loop closes |
 
 ## Authored works (Dr. Mann's catalog)
 
@@ -51,7 +52,6 @@ Stories written during isolation on the ice planet. Not simulations — fiction.
 
 ## Candidates for future iteration
 
-- *Ocean's Eleven / Twelve / Thirteen* (2001–2007) — transitional con-artist arc between Rounders and The Departed/The Rip
 - *Ford v Ferrari* (2019) — engineering under corporate obstruction; cover identity candidate
 - *Downsizing* (2017) — near-future bridge between Contagion and The Martian
 
