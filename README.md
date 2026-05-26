@@ -21,7 +21,7 @@ This repo collects a tongue-in-cheek but internally consistent "Matt Damon Cinem
 | 6 | Green Zone | Roy Miller | Iraq; flagged for Treadstone |
 | 7–10 | Bourne series | Jason Bourne / David Webb | |
 | 11 | The Departed | Colin Sullivan | Back in Southie; Chuckie reappears |
-| 11b | The Cut | [classified] | Chuckie reappears |
+| 11b | The Rip | [classified] | Chuckie reappears |
 | 12 | The Informant! | Mark Whitacre | |
 | 13 | Syriana | Bryan Woodman | |
 | 13b | Stillwater | Bill Baker | Goes to ground in Marseille |
@@ -51,7 +51,7 @@ Stories written during isolation on the ice planet. Not simulations — fiction.
 
 ## Candidates for future iteration
 
-- *Ocean's Eleven / Twelve / Thirteen* (2001–2007) — transitional con-artist arc between Rounders and The Departed/The Cut
+- *Ocean's Eleven / Twelve / Thirteen* (2001–2007) — transitional con-artist arc between Rounders and The Departed/The Rip
 - *Ford v Ferrari* (2019) — engineering under corporate obstruction; cover identity candidate
 - *Downsizing* (2017) — near-future bridge between Contagion and The Martian
 
@@ -75,7 +75,7 @@ All film titles, characters, and related intellectual property referenced in thi
 - *Green Zone* © 2010 Universal Pictures / Working Title Films
 - *The Bourne Identity*, *The Bourne Supremacy*, *The Bourne Ultimatum*, *Jason Bourne* © Universal Pictures / Kennedy Marshall Company
 - *The Departed* © 2006 Warner Bros. Entertainment Inc.
-- *The Cut* © 2025 respective rights holders
+- *The Rip* © 2025 respective rights holders
 - *The Informant!* © 2009 Warner Bros. Entertainment Inc.
 - *Syriana* © 2005 Warner Bros. Entertainment Inc.
 - *The Adjustment Bureau* © 2011 Universal Pictures

@@ -32,7 +32,7 @@ Jason Bourne / David Webb]
         JB[Jason Bourne (2016)]
         DEP[The Departed
 Colin Sullivan]
-        CUT[The Cut
+        CUT[The Rip
 alias classified]
         INF[The Informant!
 Mark Whitacre]

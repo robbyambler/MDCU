@@ -1,6 +1,6 @@
 # Matt Damon Cinematic Universe (MDCU) – Overview
 
-This document outlines a fictional but internally consistent "Matt Damon Cinematic Universe" (MDCU) in which many of Matt Damon's major film roles are interpreted as different aliases of a single individual. His life progresses mostly forward in time. One human relationship runs through all of it: the friend from South Boston (played by Ben Affleck in Good Will Hunting, The Departed, and The Cut, and written into Dogma from memory on the ice planet) who knew him before any of the identities began.
+This document outlines a fictional but internally consistent "Matt Damon Cinematic Universe" (MDCU) in which many of Matt Damon's major film roles are interpreted as different aliases of a single individual. His life progresses mostly forward in time. One human relationship runs through all of it: the friend from South Boston (played by Ben Affleck in Good Will Hunting, The Departed, and The Rip, and written into Dogma from memory on the ice planet) who knew him before any of the identities began.
 
 Only one major source of literal time distortion is used: the relativistic effects and higher-dimensional beings of *Interstellar*. Period-set and tonally anomalous films are stories Dr. Mann wrote during his years of isolation on the ice planet — not simulations, not time travel.
 
@@ -10,7 +10,7 @@ Only one major source of literal time distortion is used: the relativistic effec
 - Legal, military, and intelligence institutions repeatedly recruit, reshape, and compartmentalize his identity. Memory alteration and deep-cover work explain conflicting backstories.
 - The only hard time distortion is *Interstellar*: relativistic time dilation and the intervention of higher-dimensional beings. No routine time travel.
 - Period-set and tonally anomalous films are stories Dr. Mann wrote during isolation on the ice planet. They are canonical as creative output, not as lived experiences.
-- The Ben Affleck character (Chuckie Sullivan in *Good Will Hunting*, unnamed friend in *The Departed* and *The Cut*, written as Bartleby in *Dogma*) is the one human constant across the entire arc — the only relationship that predates all the cover identities.
+- The Ben Affleck character (Chuckie Sullivan in *Good Will Hunting*, unnamed friend in *The Departed* and *The Rip*, written as Bartleby in *Dogma*) is the one human constant across the entire arc — the only relationship that predates all the cover identities.
 
 ## High-level life arc
 
@@ -70,9 +70,9 @@ Treadstone takes him apart. Memories stripped. A new identity engineered over th
 
 ---
 
-### 8. Criminal immersion — *The Departed* (Colin Sullivan) + *The Cut* (classified)
+### 8. Criminal immersion — *The Departed* (Colin Sullivan) + *The Rip* (classified)
 
-The assignment sends him back to South Boston as Colin Sullivan, a corrupt cop on Costello's payroll. Chuckie is still there — the old friend, still the one person who knew him before all of this. The Ocean's years were crime with exits. The Departed has none. A concurrent assignment, The Cut, operates in the same moral register, and Chuckie is in that one too. Both collapse together. He is extracted and rebuilt in the corporate world.
+The assignment sends him back to South Boston as Colin Sullivan, a corrupt cop on Costello's payroll. Chuckie is still there — the old friend, still the one person who knew him before all of this. The Ocean's years were crime with exits. The Departed has none. A concurrent assignment, The Rip, operates in the same moral register, and Chuckie is in that one too. Both collapse together. He is extracted and rebuilt in the corporate world.
 
 *From here:* Corporate world. The corruption at least wears a suit.
 
