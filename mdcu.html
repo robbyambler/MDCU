@@ -49,33 +49,41 @@ body {
 .site-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
-  padding: 28px 32px;
+  padding: 36px 32px 28px;
   display: flex;
-  align-items: flex-start;
-  gap: 40px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
 }
 
 .subject-id h1 {
-  font-size: 24px;
+  font-size: 36px;
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.12em;
   color: white;
   margin-bottom: 4px;
   text-transform: uppercase;
 }
 
-.subject-id .subtitle {
+.subject-id .spelled-out {
   color: var(--muted);
   font-family: 'Courier New', monospace;
   font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.subject-id .subtitle {
+  color: var(--muted);
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
   letter-spacing: 0.1em;
 }
 
 .header-desc {
-  display: flex;
-  align-items: center;
-  max-width: 420px;
+  max-width: 480px;
 }
 
 .header-desc p {
@@ -331,6 +339,7 @@ footer {
 <header class="site-header">
   <div class="subject-id">
     <h1>MDCU</h1>
+    <div class="spelled-out">Matt Damon Cinematic Universe</div>
     <div class="subtitle">Unified Identity Profile &nbsp;·&nbsp; Operational Dossier</div>
   </div>
   <div class="header-desc">
