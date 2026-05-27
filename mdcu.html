@@ -72,25 +72,16 @@ body {
   letter-spacing: 0.1em;
 }
 
-.meta-grid {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 10px 28px;
-  font-size: 12px;
+.header-desc {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
 }
 
-.meta-item label {
-  display: block;
+.header-desc p {
   color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.meta-item span {
-  font-family: 'Courier New', monospace;
   font-size: 13px;
+  line-height: 1.7;
 }
 
 .tab-nav {
@@ -98,6 +89,7 @@ body {
   border-bottom: 1px solid var(--border);
   padding: 0 32px;
   display: flex;
+  justify-content: center;
   overflow-x: auto;
 }
 
@@ -338,34 +330,11 @@ footer {
 
 <header class="site-header">
   <div class="subject-id">
-    <h1>The Subject</h1>
-    <div class="subtitle">Matt Damon Cinematic Universe &nbsp;·&nbsp; Unified Identity Profile &nbsp;·&nbsp; Operational Dossier</div>
+    <h1>MDCU</h1>
+    <div class="subtitle">Unified Identity Profile &nbsp;·&nbsp; Operational Dossier</div>
   </div>
-  <div class="meta-grid">
-    <div class="meta-item">
-      <label>Known aliases</label>
-      <span style="color: var(--accent);">18+</span>
-    </div>
-    <div class="meta-item">
-      <label>Timeline span</label>
-      <span>1991 – 22nd c.</span>
-    </div>
-    <div class="meta-item">
-      <label>Status</label>
-      <span style="color: var(--green);">ACTIVE</span>
-    </div>
-    <div class="meta-item">
-      <label>Confirmed origin</label>
-      <span>Boston, MA</span>
-    </div>
-    <div class="meta-item">
-      <label>Threat classification</label>
-      <span style="color: var(--amber);">CIVILIZATIONAL</span>
-    </div>
-    <div class="meta-item">
-      <label>Last confirmed location</label>
-      <span>Elysium orbit</span>
-    </div>
+  <div class="header-desc">
+    <p>A fan theory treating every major Matt Damon role as a different alias of one individual across a single long life. The films are arranged in internal chronological order. One relationship — the friend from South Boston — runs through all of it.</p>
   </div>
 </header>
 
