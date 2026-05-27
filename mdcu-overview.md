@@ -88,11 +88,15 @@ The assignment sends him back to South Boston as Colin Sullivan, a corrupt cop o
 
 ---
 
-### 9. Corporate fracture — *The Informant!* (Mark Whitacre)
+### 9. The conscience resurfaces — *The Informant!* (Mark Whitacre)
 
-Agribusiness executive and FBI informant. The accumulated weight of his compartmentalized identities becomes clinically visible — documented paranoia, mania, an erratic relationship to the truth. Federal prison. He reemerges with a clearer view of who he actually is.
+He surfaces in agribusiness as Mark Whitacre. He discovers his company is running a global price-fixing conspiracy. His first instinct — possibly his first genuine instinct in a decade — is to call the FBI. Not because he's caught. Because it's wrong. Rudy Baylor would have. Roy Miller would have. He wants to be that person again, and for the first time since Memphis he actually tries.
 
-*From here:* Europe. Energy analyst.
+The problem is that the person who walks into the FBI has been through Treadstone, South Boston, and The Rip. His relationship to the truth is no longer something he can fully control. He cooperates genuinely and embezzles simultaneously, without apparent awareness of the contradiction. The paranoia and the erratic behavior are side effects — not the story. The story is that the instinct came back. He tried to return to himself. He mostly did. It was messy. Federal prison.
+
+He gets out. The instinct was right even if the execution was broken. That distinction matters to him. He'll try again — cleaner next time.
+
+*From here:* Europe. He needs distance, and a cover that keeps him far from anything institutional.
 
 ---
 
