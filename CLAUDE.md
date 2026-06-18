@@ -56,6 +56,12 @@ Saving Private Ryan, All the Pretty Horses, The Talented Mr. Ripley, The Great W
 - Period-set and tonally anomalous films are stories Dr. Mann wrote during isolation — not lived experiences.
 - The Rip (2026, Netflix) is canonical alongside The Departed.
 
+## GitHub
+
+- Repo: https://github.com/robbyambler/MDCU
+- Account: **robbyambler** (personal) — not robbyambler-imb
+- Before any push: run `gh auth status` and `gh auth switch --user robbyambler` if needed
+
 ## HTML dossier notes
 
 - Dark government/classified aesthetic; dark navy background (#0a0d13)
